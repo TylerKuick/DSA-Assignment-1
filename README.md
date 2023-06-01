@@ -4,11 +4,11 @@ You are tasked by a client improve their customers loyalty management.
 Create an application to allow the employee to enter the customers details as follows.
 
 Field Name | Data Type 
-Members_ID {PK} | String 
-Members_Name | String
-Members_Email | String
-Members_Tier | String (A/B/C)
-members_Points | Integers 
+- Members_ID {PK} | String 
+- Members_Name | String
+- Members_Email | String
+- Members_Tier | String (A/B/C)
+- Members_Points | Integers 
 
 The Employee can display and add new Members.
 1. Design a Members Class with the relevant variables and methods for the storage of the Members data.
