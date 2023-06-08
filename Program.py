@@ -55,14 +55,36 @@ while loop:
             """)
 
     elif option == 2:    # Add new member 
-        AddMem(db)
+        db = AddMem(db)  
 
     elif option == 3:    # Bubble Sort (Desc)
         db = bubbleSort(db)    # Original DB is reassigned to the sorted db that is returned by bubbleSort() func      
-    
+        # Display Sorted Member Info
+        for key in db:
+                member = db[key]
+                print(f"""
+        -----------------------------------
+        ID: {member.getId()}
+        Name: {member.getName()}
+        Email: {member.getEmail()}
+        Tier: {member.getTier().upper()}
+        Points: {member.getPoints()}
+        -----------------------------------
+                """)
     elif option == 4:    # Selection Sort (Asc)
         db = selectionSort(db)  # Original DB is reassigned to the sorted db that is returned by bubbleSort() func      
-            
+        # Display Sorted Member Info
+        for key in db:
+            member = db[key]
+            print(f"""
+    -----------------------------------
+    ID: {member.getId()}
+    Name: {member.getName()}
+    Email: {member.getEmail()}
+    Tier: {member.getTier().upper()}
+    Points: {member.getPoints()}
+    -----------------------------------
+            """)  
     elif option == 5:   # Set Test Data / Reset DB 
         db = {}
         member_list = populateData()
