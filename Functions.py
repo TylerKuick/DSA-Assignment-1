@@ -16,12 +16,14 @@ def AddMem(db):
     memEmail = input("Enter member's email: ")
     
     # Prompt users for Tier, if tier is not a valid tier, prompt again
-    memTier = input("Enter member's tier [A, B, C]: ")
-    while (memTier.upper() not in tiers): 
+    memTier = input("Enter member's tier [A, B, C]: ").upper()
+    while (memTier not in tiers): 
         print("Please enter a valid tier (A, B, or C)")
-        memTier = input("Enter member's tier [A, B, C]: ")
+        memTier = input("Enter member's tier [A, B, C]: ").upper()
     memPoints = int(input("Enter member's points: "))
 
     # Add new member into the db 
     new_member = Member(memID, memName, memEmail, memTier, memPoints)
     db[new_member.getId()] = new_member
+
+    return db
