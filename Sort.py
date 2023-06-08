@@ -1,10 +1,9 @@
 # Bubble Sort
-
 def bubbleSort(db):
     bubble_list = []    # Empty List for sorting 
     for key in db:
         bubble_list.append(db[key])     # Add all member objects into the bubble sorting list 
-    n = len(bubble_list)
+    n = len(db)
     for i in range(n-1, 0, -1):
         for j in range(i):
             if bubble_list[j+1].getPoints() > bubble_list[j].getPoints():   # When second member has more points than first member
@@ -18,30 +17,16 @@ Pass: {n-i}
 ---------------------------------""")
         for k in bubble_list:   
             print(f"ID: {k.getId()}, Points: {k.getPoints()}")
-    
-    db = {}     # Reset the db into a empty dictionary
+
+    # Reset the db into a empty dictionary
+    db = {}     
     for i in bubble_list:   
         db[i.getId()] = i   # Set ID as Key and Member object as Value
-
-    # Display Sorted Member Info
-    for key in db:
-            member = db[key]
-            print(f"""
-    -----------------------------------
-    ID: {member.getId()}
-    Name: {member.getName()}
-    Email: {member.getEmail()}
-    Tier: {member.getTier()}
-    Points: {member.getPoints()}
-    -----------------------------------
-            """)
 
     return db   # Sorted db
                         
 
-
 # Selection Sort
-
 def selectionSort(db):
     selection_list = []     # Empty List for sorting 
     for key in db:
@@ -67,17 +52,4 @@ Pass: {i+1}
     for i in selection_list:
         db[i.getId()] = i      # Set ID as Key and Member object as Value
 
-    # Display Sorted Member Info
-    for key in db:
-        member = db[key]
-        print(f"""
------------------------------------
-ID: {member.getId()}
-Name: {member.getName()}
-Email: {member.getEmail()}
-Tier: {member.getTier()}
-Points: {member.getPoints()}
------------------------------------
-        """)
-
-    return db
+    return db   # Sorted db
